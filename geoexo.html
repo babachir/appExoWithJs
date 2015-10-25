@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title> excercice géographie </title>
+        
+       
+		<link rel="stylesheet" href="style.css" />
+    
+		 <link href="jqvmap.css" media="screen" rel="stylesheet" type="text/css" />
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+    <script src="jquery.vmap.js" type="text/javascript"></script>
+    <script src="jquery.vmap.france.js" type="text/javascript"></script>
+	<script src="jquery.vmap.colorsFrance.js" type="text/javascript"></script>
+    
+	<script type="text/javascript">
+	var region = ['Nord-Pas-de-Calais','Picardie','Haute-Normandie','Basse-Normandie','Île-de-France','Bretagne','Champagne-Ardenne','Alsace','Centre','Bourgogne','Rhône-Alpes','Midi-Pyrénées','Languedoc-Roussillon','Poitou-Charentes','Limousin','Franche-Comté' ];
+
+	var nbrCoup = 3;
+	var regionQuestion = "Île-de-France";
+	function initExo()
+	{
+		nbrCoup=3;
+		var regionid = Math.floor((Math.random() * 15) + 0);
+		regionQuestion = document.getElementById("region");
+		regionQuestion.innerHTML = region[regionid];
+
+	}
+
+	$(document).ready(function() {
+		$('#francemap').vectorMap({
+		    map: 'france_fr',
+			hoverOpacity: 0.5,
+			hoverColor: "#EC0000",
+			backgroundColor: "#ffffff",
+			color: "#FACC2E",
+			borderColor: "#000000",
+			selectedColor: "#FACC2E",
+			enableZoom: true,
+			showTooltip: true,
+		    onRegionClick: function(element, code, region)
+		    {
+
+		    	regionQuestion = document.getElementById("region").innerHTML;
+             	if(regionQuestion==region)
+             	{	
+		        alert("Vous avez gagnez");
+		        initExo();
+		    	}
+		    	else
+		    		{
+		    			if(nbrCoup>0)
+		    			{
+		    			nbrCoup--;
+		    			alert("faux, il vous reste "+nbrCoup+ "coup");
+		    			}
+		    			else
+		    			{
+		    			alert("vous avez perdu, cliquez sur cours pour connaitre la réponse");
+		    			window.open("geocours.html");
+		    			initExo();
+		    			nbrCoup=3;	
+		    			}
+		    		}
+		    	
+
+		    }
+		});
+	});
+	</script>
+
+    </head>
+    <body >
+		<header>
+		<div>
+		
+			<h3> Géographie </h3>
+		</div>
+		</header>
+		<nav>
+			<ul>
+				<li>
+					<a href="math.html"> Mathématique</a>
+				</li>
+				<li>
+					<a href="geo.html"> Géographie </a>
+				</li>
+			
+			
+			</ul>
+			
+		</nav>
+		<section>
+
+			<div id="francemap" style="width: 500px; height: 500px;margin: 33px 158px;"></div>
+		
+			<div class="question"><p> ou se touve <b id="region">Île-de-France</b> ?</p> </div>
+		
+			<div> <a href=" " class="bt-blue" onclick="initExo(); return false;">inisialiser</a></div>
+		</section>
+	
+	
+    </body>
+</html>
