@@ -1,5 +1,7 @@
 var nbrCoup = 3;
 
+
+/*fonction pour crée  un nouveau exercice*/
 function initExo()
 {
 	var number1 =  document.getElementById("number1") ;
@@ -29,7 +31,7 @@ function initExo()
 
 }
 
-
+/*valider la saisi de l'utilisateur */
 function valider()
 {
 	var result;
@@ -91,6 +93,7 @@ function valider()
 
 }
 
+/*calcule le résultat*/
 
 function result()
 {
