@@ -11,7 +11,7 @@
 		<header>
 		<div>
 		
-			<h3> Mathématique </h3>
+			<h3> Mathématique / exo</h3>
 		</div>
 		</header>
 		<nav>
@@ -29,11 +29,28 @@
 		</nav>
 		<section>
 		
+		<form class="calculatrice">
+		
+		 <div class="desactiveResult"></div> 	
+		 <input type="text" id="number1"   />
+		 <div class="actionSelected" id="actionSelected">+</div>
+	
+		 <div class="desactiveResult"></div>
+		 <input type="text" id="number2"/>
+		
+		<div class="egale"> = </div>
+		
+		
+		<input type="text" id="resultInput"/>
 
+		<a href=" " class="bt-blue" onClick="initExo();return false;"> initialiser  </a>
+		<a href=" " class="bt-blue" onClick="valider();return false;"> valider </a>
+		<a href=" " class="bt-blue" onClick="result();return false;"> resultat </a>
+		</form>
 		
-		
+
 		</section>
 	
-	
+	<script src="exomath.js"></script>
     </body>
 </html>
