@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title> excercice en ligne </title>
+        
+       
+		<link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+		<header>
+		<div>
+		
+			<h3> Mathématique </h3>
+		</div>
+		</header>
+		<nav>
+			<ul>
+				<li>
+					<a href="math.html"> Mathématique</a>
+				</li>
+				<li>
+					<a href="geo.html"> Géographie </a>
+				</li>
+			
+			
+			</ul>
+			
+		</nav>
+		<section>
+		
+		<form class="calculatrice">
+		
+		 <input type="text" id="number1"   />
+		 <div class="actionSelected" id="actionSelected">+</div>
+	
+		 
+		 <input type="text" id="number2"/>
+		
+		<div class="egale"> = </div>
+		<div class="desactiveResult"></div>
+		
+		<input type="text" id="resultInput"/>
+
+		<a href="#" class="bt-blue" onClick="result()"> resultat </a>
+		</form>
+		
+		<div class="operation">
+			
+			<a href="#" class="bt-blue" onClick="chooseOp('plus')"> + </a>
+			<a href="#" class="bt-blue" onClick="chooseOp('moins')"> - </a>
+			<a href="#" class="bt-blue" onClick="chooseOp('multi')"> x </a>
+			<a href="#" class="bt-blue" onClick="chooseOp('div')"> / </a>
+		
+		</div>
+		
+		</section>
+	
+	<script src="calculatrice.js"></script>
+    </body>
+</html>
