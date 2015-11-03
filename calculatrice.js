@@ -38,7 +38,7 @@ function result()
 		}
 		else
 		{
-			alert(actionSelected);
+			
 				switch(actionSelected)
 				{		
 					case "x":
